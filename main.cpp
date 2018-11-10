@@ -11,7 +11,8 @@
 
 using namespace std;
 
-/*
+/**
+ * Prints the entire schedule of courses.
  * print schedule - outputs course schedule to the screen
  * @param - add any new parameters you need
  */
@@ -24,6 +25,10 @@ void printSchedule(vector<Course> &m)
     std::copy(begin, end, os);
 }
 
+/**
+ * Drives the progream.
+ * @return    int
+ */
 int main () {
     //TODO read from courses.txt
     ifstream read_file;
