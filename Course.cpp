@@ -77,6 +77,6 @@ ostream & operator << (ostream &os, const Course & m)
     os << m.title << " ";
     os << Course::getDay(m.day) << " ";
     os << m.start_time << " ";
-    os << m.finish_time << " ";
+    os << m.finish_time;
     return os;
 }

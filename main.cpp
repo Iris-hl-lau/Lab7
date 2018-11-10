@@ -15,9 +15,13 @@ using namespace std;
  * print schedule - outputs course schedule to the screen
  * @param - add any new parameters you need
  */
-void printSchedule()
+void printSchedule(vector<Course> &m)
 {
     //TODO implement your print using the copy algorithm, 2 iterators, and an ostream_iterator
+    auto begin = m.begin();
+    auto end = m.end();
+    ostream_iterator<Course> os(cout,"\n");
+    std::copy(begin, end, os);
 }
 
 int main () {
@@ -49,11 +53,13 @@ int main () {
                 cout << "CONFLICT: \n";
                 cout << *it;
                 cout << *iter;
+                cout << "\n";
             }
         }
     }
 
     //TODO print out schedule
+    printSchedule(courses);
 
     cout << "Find the TODOs in the code and implement them." << endl;
     cout << "Add/modify any functions/code you need to complete your task." << endl;
