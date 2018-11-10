@@ -22,7 +22,23 @@ void printSchedule()
 
 int main () {
     //TODO read from courses.txt
-    //TODO store data in an STL container
+    ifstream read_file;
+    read_file.open("courses.txt");
+
+    string title;
+    char day;
+    unsigned int startTime;
+    unsigned int finishTime;
+    vector<Course> courses;
+
+    while(read_file >> title >> day >> startTime >> finishTime) {
+        Course c(title, Course::getDOW(day), startTime, finishTime);
+        //TODO store data in an STL container
+        courses.push_back(c);
+    }
+
+
+
     //TODO sort your STL container with the sort algorithm
     //TODO implement code to determine schedule conflicts
     //TODO print out schedule conflicts

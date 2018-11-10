@@ -16,6 +16,8 @@ string title; // Name of Course
 dayOfWeek day; // Day of Course
 unsigned int start_time; // Course start time in HHMM format
 unsigned int finish_time; // Course finish time in HHMM format
+static dayOfWeek getDOW(char day); // Enum to char day of the week
+static char getDay(dayOfWeek dow); // Char to Enum day of the week
 };
 
 // Helper operator for output
