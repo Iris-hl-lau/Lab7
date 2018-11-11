@@ -32,9 +32,9 @@ void printSchedule(vector<Course> &m)
 int main () {
     //TODO read from courses.txt
     ifstream read_file;
-    read_file.open("courses.txt");
+    read_file.open("../courses.txt");
 
-    string title;
+    string title, data;
     char day;
     unsigned int startTime;
     unsigned int finishTime;
@@ -51,14 +51,13 @@ int main () {
 
     //TODO implement code to determine schedule conflicts
     for(auto it = courses.begin(); it != courses.end() - 1; ++it) {
-        for(auto iter = courses.begin() + 1; iter != courses.end(); ++iter) {
+        for(auto iter = it + 1; iter != courses.end(); ++iter) {
             if(*it == *iter) {
 
                 //TODO print out schedule conflicts
                 cout << "CONFLICT: \n";
-                cout << *it;
-                cout << *iter;
-                cout << "\n";
+                cout << *it << "\n";
+                cout << *iter << "\n\n";
             }
         }
     }
